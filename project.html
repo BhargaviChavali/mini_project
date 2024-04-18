@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<style>
+body{
+        background-color: white;
+        width:100vw;
+        overflow-x: hidden;
+    }
+.fb{
+    height:50px;
+    width:1530px;
+     display:flex;
+     flex-direction:row;
+     background-color: whitesmoke;
+     position: fixed;
+     z-index: 1;
+     margin-top: -18px;
+}
+.menu{
+            height:32px;
+            width: 32px;
+            border-radius: 50%;
+            background-color: whitesmoke;
+            margin-left: 5px;
+            margin-top: 5px;
+        }
+    .search-bar{
+        height:40px;
+        width: 500px;
+        border: 1px solid black;
+        border-radius: 20px;
+        margin-left: 200px;
+        background-color: rgb(169, 219, 219);
+    }
+    .fb1{
+    height:700px;
+     width:100px;
+     margin-top: 20px;
+     display:flex;
+     flex-direction:column;
+     align-items: flex-start;
+     position: fixed;
+     top:100px;
+     z-index: 1;
+    }
+    .compose{
+        height:40px;
+        width:40px;
+        border-radius: 10px;
+        margin-left: 23px;
+        position:absolute;
+        top:-50px;
+        background-color: rgb(116, 223, 223); 
+        z-index: 5;
+    }
+    .cd{ 
+        height:40px;
+        width:70px;
+        border-radius: 10px;
+        transition-property: width,background-color;
+        transition-duration: 10ms;
+
+    }
+    .cd:hover::after{
+        background-color: rgba(0, 255, 255, 0.175);
+    }
+
+    .compose:hover{
+        width:130px;
+    }
+    .compose:hover::after {
+    content: "Compose";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd1:hover{
+        width:130px;
+    }
+ .cd,.cd1:hover::after {
+
+    content: "Mail";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd2:hover{
+        width:130px;
+    }
+    .cd,.cd2:hover::after {
+
+    content: "Starred";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd3:hover{
+    width:130px;
+    }
+    .cd,.cd3:hover::after {
+
+    content: "Snoozed";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd4:hover{
+        width:130px;
+    }
+    .cd,.cd4:hover::after {
+
+    content: "Sent";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd5:hover{
+        width:130px;
+    }
+    .cd,.cd5:hover::after {
+
+    content: "Draft";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd6:hover{
+        width:130px;
+    }
+    .cd,.cd6:hover::after {
+
+    content: "More";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd7:hover{
+        width:130px;
+    }
+    .cd,.cd7:hover::after {
+
+    content: "Important";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd8:hover{
+        width:130px;
+    }
+    .cd,.cd8:hover::after {
+
+    content: "Chats";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd9:hover{
+        width:130px;
+    }
+    .cd,.cd9:hover::after {
+
+    content: "Scheduled";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd10:hover{
+        width:130px;
+    }
+    .cd,.cd10:hover::after {
+
+    content: "All Mail";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd11:hover{
+        width:130px;
+    }
+    .cd,.cd11:hover::after {
+
+    content: "Spam";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd12:hover{
+        width:130px;
+    }
+    .cd,.cd12:hover::after {
+
+    content: "Trash";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd13:hover{
+        width:130px;
+    }
+    .cd,.cd13:hover::after {
+
+    content: "Categories";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd14:hover{
+        width:130px;
+    }
+    .cd,.cd14:hover::after {
+
+    content: "Social";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd15:hover{
+        width:130px;
+    }
+    .cd,.cd15:hover::after {
+
+    content: "Updates";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd16:hover{
+        width:170px;
+    }
+    .cd,.cd16:hover::after {
+
+    content: "Forums";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd17:hover{
+        width:170px;
+    }
+    .cd,.cd17:hover::after {
+
+    content: "Promotions";
+    font-weight: bold;
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd18:hover{
+        width:170px;
+    }
+    .cd,.cd18:hover::after {
+
+    content: "Manage labels";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+.cd,.cd19:hover{
+        width:170px;
+    }
+    .cd,.cd19:hover::after {
+
+    content: "Create new label";
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.main{
+    display:flex;
+    flex-direction: row;
+}
+.mails{
+    width: 100%;
+    overflow: scroll;
+    scrollbar-width: 100px;
+    overflow-x: hidden;
+}
+.m1{
+    height:40px;
+    width: 1360px;
+    /* border: 1px solid; */
+    border-radius: 10px;
+    position: fixed;
+    left: 130px;
+    top: 49px;
+    /* z-index: 1; */
+    background-color: whitesmoke;
+}
+.m2{
+    height:40px;
+    width: 250px;
+    /* border: 1px solid; */
+    position:absolute;
+    top:100px;
+    left:140px;
+    z-index: -1;
+}
+.m2:hover{
+    color: blue;
+    border-bottom: 3px solid blue;
+}
+.m3{
+    height:40px;
+    width: 250px;
+    /* border: 1px solid; */
+    position:absolute;
+    top:100px;
+    left:390px;
+    z-index: -1;
+}
+.m3:hover{
+    color: blue;
+    border-bottom: 3px solid blue;
+}
+.m4{
+    height:40px;
+    width: 250px;
+    /* border: 1px solid; */
+    position:absolute;
+    top:100px;
+    left:640px;
+    z-index: -1;
+}
+.m4:hover{
+    color: blue;
+    border-bottom: 3px solid blue;
+}
+
+.m45{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:140px;
+    left:140px;
+    z-index: -1;
+}
+.m45:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m5{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:180px;
+    left:140px;
+    z-index: -1;
+}
+.m5:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m6{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:220px;
+    left:140px;
+    z-index: -1;
+}
+.m6:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m7{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:260px;
+    left:140px;
+    z-index: -1;
+}
+.m7:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m8{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:300px;
+    left:140px;
+    z-index: -1;
+}
+.m8:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m9{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:340px;
+    left:140px;
+    z-index: -1;
+}
+.m9:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m10{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:380px;
+    left:140px;
+    z-index: -1;
+}
+.m10:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m11{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:420px;
+    left:140px;
+    z-index: -1;
+}
+.m11:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m12{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:460px;
+    left:140px;
+    z-index: -1;
+}
+.m12:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m13{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:500px;
+    left:140px;
+    z-index: -1;
+}
+.m13:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m14{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:540px;
+    left:140px;
+    z-index: -1;
+}
+.m14:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m15{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:580px;
+    left:140px;
+    z-index: -1;
+}
+.m15:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m16{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:620px;
+    left:140px;
+    z-index: -1;
+}
+.m16:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m17{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:660px;
+    left:140px;
+    z-index: -1;
+}
+.m17:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m18{
+    height:40px;
+    width: 1370px; 
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:700px;
+    left:140px;
+    z-index: -1;
+}
+.m18:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m19{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:740px;
+    left:140px;
+    z-index: -1;
+}
+.m19:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m20{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:780px;
+    left:140px;
+    z-index: -1;
+}
+.m20:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m21{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:820px;
+    left:140px;
+    z-index: -1;
+}
+.m21:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m22{
+    height:40px;
+    width: 1370px;
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:860px;
+    left:140px;
+    z-index: -1;
+
+}
+.m22:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m23{
+    height:40px;
+    width: 1370px; 
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:900px;
+    left:140px;
+    z-index: -1;
+}
+.m23:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m24{
+    height:40px;
+    width: 1370px; 
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:940px;
+    left:140px;
+    z-index: -1;
+}
+.m24hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m25{
+    height:40px;
+    width: 1370px; 
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:980px;
+    left:140px;
+    z-index: -1;
+}
+.m25:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m26{
+    height:40px;
+    width: 1370px; 
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:1020px;
+    left:140px;
+    z-index: -1;
+}
+.m26:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m27{
+    height:40px;
+    width: 1370px; 
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:1060px;
+    left:140px;
+    z-index: -1;
+}
+.m27:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m28{
+    height:40px;
+    width: 1370px; 
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:1100px;
+    left:140px;
+    z-index: -1;
+}
+.m28:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m29{
+    height:40px;
+    width: 1370px; 
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:1140px;
+    left:140px;
+    z-index: -1;
+}
+.m29:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m30{
+    height:40px;
+    width: 1370px; 
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:1180px;
+    left:140px;
+    z-index: -1;
+}
+.m30:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+.m31{
+    height:40px;
+    width: 1370px; 
+    border-bottom: 1px solid gray;
+    position:absolute;
+    top:1220px;
+    left:140px;
+    z-index: -1;
+}
+.m31:hover{
+    box-shadow: 1px 1px 2px rgba(128, 128, 128, 0.456),1px -2px 1px rgba(128, 128, 128, 0.456);
+    border: 1px solid gray;
+}
+
+input{
+    border-width: 0px;
+}
+/* input:focus{
+    ;
+} */
+</style>
+</head>
+<body>
+    <hr>
+    <div class="fb"> 
+    <div class="head">
+        <ion-icon class="menu" name="menu-outline"style="font-size:20px"></ion-icon>
+        <img src="https://logos-world.net/wp-content/uploads/2020/11/Gmail-Logo.png"height="25px"width="40px">
+        <i style="font-size: 25px;position:relative; top:-5px; left:10px;font-style: normal;">Gmail</i>
+    </div>
+    <div class="search-bar">
+        <ion-icon name="search-outline" style="margin-left: 20px;font-size: 23px;margin-top: 10px;"></ion-icon>
+        <input type="text" placeholder="Search Mail" style="border-top-color:black;background-color:rgb(169, 219, 219);font-size:16px; position: fixed;top:2px;width:300px;height:35px; border: none; outline: none; ">
+        <!-- <i style="font-size: 20px;color: gray;position:relative; top:-5px; left:10px;font-style: normal;">Search mail</i> -->
+        <ion-icon name="options"  style="font-size: 24px; margin-left: 400px;"></ion-icon>
+    </div>
+    <div class="last"> 
+        <ion-icon name="help-circle-outline" style="font-size: 33px;margin-top:9px;margin-left: 500px;color: rgb(51, 46, 46)"></ion-icon>
+        <ion-icon name="settings-outline" style="font-size: 29px;margin-left: 10px;"></ion-icon>
+        <ion-icon name="apps" style="position:relative;font-size: 23px; left: 10px; top: -5px; color: rgb(52, 49, 49);"></ion-icon>
+        <img src="./img2.jpeg" style="width:30px;height:30px;border-radius: 50%; margin-left: 20px;">
+        </div>
+    </div>
+    </div>
+    <!-- <div class="compose">
+        <ion-icon name="pencil"style="font-size:20px;margin-left:10px;margin-top:10px;"></ion-icon> style="font-size: 17px; font-weight: bold;margin-left: 20px; margin-top: 10px;"
+    </div> -->
+    <div class="main">
+    <div class="fb1">
+        <div class="compose">
+        <ion-icon name="pencil"style="font-size:20px;margin-left:10px;margin-top:10px;"></ion-icon>
+        </div>
+        <div class="cd">
+        <div class="cd1"><ion-icon name="mail" style="font-size:17px;font-weight: bold;margin-left:20px;margin-top:10px;"></ion-icon></div>
+        <div class="cd2"><ion-icon  name="star-outline" style="font-size: 17px; font-weight: bold;margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd3"><ion-icon name="time-outline" style="font-size: 17px; font-weight: bold;margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd4"><ion-icon name="send-outline" style="font-size: 17px; font-weight: bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd5"><ion-icon name="document-outline" style="font-size: 17px; font-weight: bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd6"> <ion-icon name="chevron-down-outline" style="font-size: 17px; font-weight: bold;margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd7"> <ion-icon name="alert-circle-outline" style="font-size:17px; font-weight: bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div> 
+        <div class="cd8"><ion-icon name="chatbox-ellipses-outline" style="font-size: 17px; font-weight: bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd9"><ion-icon name="alarm-outline" style="font-size: 17px; font-weight: bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd10"><ion-icon name="mail-outline" style="font-size: 17px; font-weight: bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd11"><ion-icon name="alert-circle-outline" style="font-size: 17px; font-weight: bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd12"><ion-icon name="trash-outline" style="font-size: 17px; font-weight: bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd13"><ion-icon name="play-outline" style="font-size: 15px; margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd14"><ion-icon name="people-outline" style="font-size: 15px; margin-left: 20px; margin-top: 10px;"></ion-icon> </div> 
+        <div class="cd15"><ion-icon name="information-circle-outline"style="font-size:17px; font-weight: bold; margin-left: 20px; margin-top: 10px;"></ion-icon> </div>   
+        <div class="cd16"><ion-icon name="documents-outline" style="font-size: 17px; font-weight: bold;margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd17"><ion-icon name="pricetag-outline" style="font-size: 17px;font-weight:bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        <div class="cd18"><ion-icon name="settings-outline" style="font-size: 17px;font-weight:bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div>   
+        <div class="cd19"><ion-icon name="add-outline" style="font-size: 17px;font-weight:bold; margin-left: 20px; margin-top: 10px;"></ion-icon></div>
+        </div>
+    </div>
+    <div class="mails">
+        <div class="m1">
+            <ion-icon name="square-outline" style="margin-top: 15px;"></ion-icon>
+            <ion-icon name="caret-down-outline" style="font-size: 10px;"></ion-icon>
+            <ion-icon name="refresh" style="font-size: large;color: black; margin-left: 25px;"></ion-icon>
+            <ion-icon name="ellipsis-vertical" style="margin-left: 25px;font-size: large;"></ion-icon>
+            <p style="position: relative;left:1000px;top:-40px">1-50 of 100</p>
+            <ion-icon name="chevron-back" style="position: relative;left: 1100px;top:-72px;color: gray;"></ion-icon>
+            <ion-icon name="chevron-forward" style="position: relative;left: 1100px;top:-72px;"></ion-icon>
+            <ion-icon name="caret-down" style="position: relative;left: 1130px;top:-72px;"></ion-icon>
+        </div>
+        <div class="sub">
+        <div class="m2">
+            <ion-icon name="mail" style="font-size: 20px; margin-top: 10px; margin-left: 20px"></ion-icon>
+            <p style="position: relative; left:60px; top:-40px;text-decoration: none;"> Primary </p>
+        </div>
+        <div class="m3">
+            <ion-icon name="pricetag-outline" style="font-size: 20px; margin-top: 10px; margin-left: 20px"></ion-icon>
+            <p style="position: relative; left:60px; top:-40px;text-decoration: none;"> Promotions </p>
+         </div>
+         <div class="m4">
+            <ion-icon name="people-outline" style="font-size: 20px; margin-top: 10px; margin-left: 20px"></ion-icon>
+            <p style="position: relative; left:60px; top:-40px;text-decoration: none;"> Social </p>
+        </div></div>
+        <div class="m45">
+            <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+            <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+            <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+            <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1300px;top: -115px;font-size: 13px;"><b>10:50AM</p>
+            </div>
+        <div class="m5">
+        <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+        <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+        <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+        <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1300px;top: -115px;font-size: 13px;"><b>10:50AM</p>
+        </div>
+        <div class="m6">
+            <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+            <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px;"></ion-icon> 
+            <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+            <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1305px;top: -115px;font-size: 13px;"><b>3:50PM</p>
+         </div>
+        <div class="m7">
+            <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+            <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+            <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+             <p style="position: relative;left: 280px;top: -82px;"><b> <ion-icon name="notifications" style="font-size:20px;color:gold"></ion-icon>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Apr 1</p>
+        </div>
+        <div class="m8">
+            <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+            <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+            <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+             <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 30</p>
+        </div>
+        <div class="m9">
+             <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+             <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+             <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+             <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 30</p>
+        </div>
+        <div class="m10">
+            <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+            <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+            <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+            <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 27</p>
+        </div>
+        <div class="m11">
+            <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+            <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+            <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+            <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 27</p>
+        </div>
+        <div class="m12">
+            <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+            <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+            <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+            <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 20</p>
+        </div>
+        <div class="m13">
+            <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+            <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+            <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+            <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 20</p>
+       </div>
+       <div class="m14">
+           <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+           <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+           <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+           <p style="position: relative;left: 280px;top: -82px;"><b> <ion-icon name="notifications" style="font-size:20px;color:gold"></ion-icon> Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p><p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 17</b></p>
+       </div>
+       <div class="m15">
+           <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+           <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+           <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+           <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 17</p>
+       </div>
+       <div class="m16">
+           <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+           <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+           <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+           <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 16</p>
+       </div>
+       <div class="m17">
+        <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+        <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+        <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+        <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 16</p>
+    </div>
+    <div class="m18">
+        <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+        <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+        <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+        <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 16</p>
+    </div>
+    <div class="m19">
+        <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+        <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+        <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+        <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 15</p>
+   </div>
+   <div class="m20">
+       <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+       <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+       <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+       <p style="position: relative;left: 280px;top: -82px;"><b> <ion-icon name="notifications" style="font-size:20px;color:gold"></ion-icon> Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 15</p>
+   </div>
+   <div class="m21">
+       <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+       <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+       <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+       <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 15</p>
+   </div>
+   <div class="m22">
+    <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+    <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+    <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+    <p style="position: relative;left: 280px;top: -82px;"><b> <ion-icon name="notifications" style="font-size:20px;color:gold"></ion-icon> Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 14</p>
+</div>
+<div class="m23">
+    <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+    <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+    <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+    <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 10</p>
+</div>
+<div class="m24">
+    <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+    <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+    <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+    <p style="position: relative;left: 280px;top: -82px;"><b> Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 10</p>
+</div>
+<div class="m25">
+    <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+    <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+    <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+    <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 6</p>
+</div>
+<div class="m26">
+ <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+ <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+ <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+ <p style="position: relative;left: 280px;top: -82px;"><b> <ion-icon name="notifications" style="font-size:20px;color:gold"></ion-icon> Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 6</p>
+</div>
+<div class="m27">
+ <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+ <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+ <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+ <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 6</p>
+</div>
+<div class="m28">
+    <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+    <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+    <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+    <p style="position: relative;left: 280px;top: -82px;"><b>  Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 4</p>
+</div>
+<div class="m29">
+    <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+    <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+    <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+    <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 4</p>
+</div>
+<div class="m30">
+ <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+ <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+ <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+ <p style="position: relative;left: 280px;top: -82px;"><b> <ion-icon name="notifications" style="font-size:20px;color:gold"></ion-icon> Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 4</p>
+</div>
+<div class="m31">
+ <ion-icon name="square-outline"  style="margin-top: 15px;margin-left: 3px"></ion-icon>
+ <ion-icon name="star-outline" style="margin-top: 15px; margin-left: 10px"></ion-icon> 
+ <h4 style="position: relative;left: 60px;top: -43px;">Interview Invitation</h4>
+ <p style="position: relative;left: 280px;top: -82px;"><b>Vibha,immediate response requried From you|You are eligible with ref ID: KL2341</b>- .....View this email in your browser Hey Vibha here is your </p>   <p style="position: relative;left: 1315px;top: -115px;font-size: 13px;"><b>Mar 3</p>
+</div>
+</div>
+</div>
+</body>
+</html>
